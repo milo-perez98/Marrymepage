@@ -77,24 +77,149 @@
       a {
         color: white;
       }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+
+      .overlay-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
     </style>
   </head>
   <body>
     <canvas id="c"></canvas>
     <header>
       <div id="credenciales">
-        <a
-          id="login"
-          href="#"
-          class="inline-block px-4 py-2 border border-gray-300 rounded text-white font-bold"
-          >Iniciar Sesion</a
-        >
+        <div id="login_container">
+          <a
+            id="login"
+            href="#"
+            class="inline-block px-4 py-2 border border-gray-300 rounded text-white font-bold"
+            >Iniciar Sesion</a
+          >
+          <div id="login-overlay" class="overlay">
+            <div class="overlay-content">
+              <!-- Contenido del formulario de inicio de sesión -->
+              <h2 class="font-bold text-center">Iniciar Sesión</h2>
+              <br />
+              <form>
+                <!-- Campos del formulario -->
+                <div class="mb-4">
+                  <label for="email" class="block text-sm font-bold mb-2"
+                    >Correo Electrónico</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="block w-full px-3 py-2 border border-gray-300 rounded"
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="password" class="block text-sm font-bold mb-2"
+                    >Contraseña</label
+                  >
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="block w-full px-3 py-2 border border-gray-300 rounded"
+                  />
+                </div>
+                <br />
+                <button
+                  type="submit"
+                  class="block w-full px-4 py-2 bg-blue-500 text-white font-bold rounded"
+                >
+                  Ingresar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="register_container"></div>
         <a
           id="register"
           href="#"
           class="inline-block px-4 py-2 border border-gray-300 rounded font-bold"
           >Registrarse</a
         >
+        <div id="register-overlay" class="overlay">
+          <div class="overlay-content">
+            <!-- Contenido del formulario de registro -->
+            <h2 class="font-bold text-center">Registrarse</h2>
+            <br />
+            <form>
+              <!-- Campos del formulario -->
+              <div class="mb-4">
+                <label for="name" class="block text-sm font-bold mb-2"
+                  >Nombre</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="block w-full px-3 py-2 border border-gray-300 rounded"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-sm font-bold mb-2"
+                  >Correo Electrónico</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="block w-full px-3 py-2 border border-gray-300 rounded"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="password" class="block text-sm font-bold mb-2"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="block w-full px-3 py-2 border border-gray-300 rounded"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="password" class="block text-sm font-bold mb-2"
+                  >Confirmar Contraseña</label
+                >
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="block w-full px-3 py-2 border border-gray-300 rounded"
+                />
+              </div>
+              <br />
+              <button
+                type="submit"
+                class="block w-full px-4 py-2 bg-blue-500 text-white font-bold rounded"
+              >
+                Registrarse
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -143,6 +268,9 @@
         <p>StockConnect &copy; 2024</p>
       </div>
     </footer>
-    <script src="./js/script.js"></script>
+    <!-- fondo para la pagina -->
+    <script src="./js/fondo.js"></script>
+    <!-- Menu desplegable del login -->
+    <script src="./js/menu_credenciales.js"></script>
   </body>
 </html>
